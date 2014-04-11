@@ -4,38 +4,12 @@ html, body {
   background: #222222;
 }
 
-/* main */
-
-.main {
-  width: 100%;
-  height: 100%;
-  background: #222222;
-  color: #fff;
+.task {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #ccc;
 }
 
-.main img {
-  width: 103px;
-  height: 89px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* transitions */
-
-.fade-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-}
-
-.fade-leave {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
+.taskList {
+  background-color: #ccc;
 }

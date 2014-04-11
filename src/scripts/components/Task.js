@@ -12,7 +12,7 @@ var Task = React.createClass({
     var name = this.props.name;
     var description = this.props.description;
     return (
-        <div>
+        <div className="task">
         { name }: { description }
         </div>
       )
