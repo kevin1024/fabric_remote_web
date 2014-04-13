@@ -13,13 +13,17 @@ require('../../styles/main.css');
 
 var imageURL = '../../images/yeoman.png';
 var Tasklist = require('./Tasklist');
+var ExecutionList = require('./ExecutionList');
 
 var FabricRemoteWebApp = React.createClass({
   /*jshint ignore:start */
   render: function() {
     return (
       <div className='main'>
+      <h1>Tasks</h1>
         <Tasklist />
+      <h1>Executions</h1>
+        <ExecutionList />
       </div>
     );
   }
