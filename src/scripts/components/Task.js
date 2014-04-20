@@ -11,11 +11,13 @@ var Task = React.createClass({
   handleExecute: function () {
     console.log('executing ' + this.props.name);
     var fr = new FabricRemote('localhost', 1234, 'secret');
+    this.props.onExecutionStarted(this);
     fr.execute([
         {task: this.props.name, args: [], kwargs: {}}
     ])
-    .then(function() {
-      console.log('done');
+    .then(function(thing) {
+      console.log('done', thing);
+      this.props.onExecutionFinished(this);
     });
   },
   /*jshint ignore:start */

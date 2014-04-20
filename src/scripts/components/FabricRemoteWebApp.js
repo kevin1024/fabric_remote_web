@@ -36,6 +36,9 @@ var FabricRemoteWebApp = React.createClass({
     this.loadTasks();
     this.loadExecutions();
   },
+  handleExecutionStarted: function(task) {
+    console.log('starting task', task);
+  },
   /*jshint ignore:start */
   render: function() {
     var tasks=this.state.tasks;
@@ -43,7 +46,7 @@ var FabricRemoteWebApp = React.createClass({
     return (
       <div className='main'>
       <h1>Tasks</h1>
-        <Tasklist tasks={tasks}/>
+        <Tasklist tasks={tasks} onExecutionStarted={this.handleExecutionStarted}/>
       <h1>Executions</h1>
         <ExecutionList executions={executions}/>
       </div>
