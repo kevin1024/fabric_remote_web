@@ -23,21 +23,29 @@ var FabricRemoteWebApp = React.createClass({
       this.setState({tasks: tasks});
     }.bind(this));
   },
+  loadExecutions: function() {
+    var fr = new FabricRemote('localhost', 1234, 'secret');
+    fr.listExecutions().then(function(executions) {
+      this.setState({executions: executions});
+    }.bind(this));
+  },
   getInitialState: function() {
-    return {tasks: []};
+    return {tasks: [], executions: []};
   },
   componentWillMount: function() {
     this.loadTasks();
+    this.loadExecutions();
   },
   /*jshint ignore:start */
   render: function() {
     var tasks=this.state.tasks;
+    var executions=this.state.executions;
     return (
       <div className='main'>
       <h1>Tasks</h1>
         <Tasklist tasks={tasks}/>
       <h1>Executions</h1>
-        <ExecutionList />
+        <ExecutionList executions={executions}/>
       </div>
     );
   }
